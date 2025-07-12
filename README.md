@@ -1,51 +1,51 @@
-# 🚀 SaaS Landing Page com Integração Stripe + GitHub
+# 🚀 SaaS Landing Page with Stripe + GitHub Integration
 
-Uma landing page moderna para SaaS com integração completa com Stripe para pagamentos e GitHub para entrega automática de repositórios.
+A modern SaaS landing page with full integration for Stripe payments and GitHub for automatic repository delivery.
 
-## ✨ Funcionalidades
+## ✨ Features
 
-- 🎨 **Design Moderno**: Interface responsiva com Tailwind CSS e DaisyUI
-- 💳 **Pagamentos Stripe**: Integração completa com checkout e webhooks
-- 🔐 **Autenticação GitHub**: Login via OAuth do GitHub
-- 📦 **Entrega Automática**: Criação automática de repositórios a partir de template
-- 📱 **Responsivo**: Design mobile-first
-- ⚡ **Performance**: Otimizado com React Server Components
+- 🎨 **Modern Design**: Responsive interface with Tailwind CSS and DaisyUI
+- 💳 **Stripe Payments**: Full integration with checkout and webhooks
+- 🔐 **GitHub Authentication**: Login via GitHub OAuth
+- 📦 **Automatic Delivery**: Automatic creation of repositories from template
+- 📱 **Responsive**: Mobile-first design
+- ⚡ **Performance**: Optimized with React Server Components
 
-## 🛠️ Tecnologias
+## 🛠️ Technologies
 
 - **Frontend**: React 18 + TypeScript + Vite
 - **Styling**: Tailwind CSS + DaisyUI
 - **Backend**: Express.js + TypeScript
-- **Pagamentos**: Stripe
-- **Autenticação**: Supabase
+- **Payments**: Stripe
+- **Authentication**: Supabase
 - **GitHub**: Octokit API
 - **Deploy**: Vercel/Netlify
 
-## 🚀 Configuração Rápida
+## 🚀 Quick Setup
 
-### 1. Clone o Repositório
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
-cd seu-repo
+git clone https://github.com/your-user/your-repo.git
+cd your-repo
 npm install
 ```
 
-### 2. Configure as Variáveis de Ambiente
+### 2. Configure Environment Variables
 
-Copie o arquivo `env.example` para `.env`:
+Copy the `env.example` file to `.env`:
 
 ```bash
 cp env.example .env
 ```
 
-Configure as seguintes variáveis:
+Set the following variables:
 
 #### Stripe
 ```env
-VITE_STRIPE_SK_HOM=sk_test_sua_chave_secreta
-VITE_STRIPE_PK_HOM=pk_test_sua_chave_publica
-STRIPE_WEBHOOK_SECRET=whsec_seu_webhook_secret
+VITE_STRIPE_SK_HOM=sk_test_your_secret_key
+VITE_STRIPE_PK_HOM=pk_test_your_public_key
+STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
 VITE_STRIPE_STARTERID_HOM=price_id_starter
 VITE_STRIPE_PROID_HOM=price_id_pro
 VITE_STRIPE_ULTIMATEID_HOM=price_id_ultimate
@@ -53,147 +53,147 @@ VITE_STRIPE_ULTIMATEID_HOM=price_id_ultimate
 
 #### GitHub
 ```env
-GITHUB_TOKEN=ghp_seu_token_pessoal
-GITHUB_TEMPLATE_REPO=seu-usuario/seu-template-repo
+GITHUB_TOKEN=ghp_your_personal_token
+GITHUB_TEMPLATE_REPO=your-user/your-template-repo
 ```
 
 #### Supabase
 ```env
-VITE_SUPABASE_URL=sua_url_supabase
-VITE_SUPABASE_ANON_KEY=sua_chave_anonima
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_anon_key
 ```
 
-### 3. Configure o Stripe
+### 3. Configure Stripe
 
-1. Crie uma conta no [Stripe](https://stripe.com)
-2. Obtenha suas chaves de API (teste e produção)
-3. Crie os produtos e preços no dashboard
-4. Configure o webhook para `checkout.session.completed`
+1. Create an account at [Stripe](https://stripe.com)
+2. Get your API keys (test and production)
+3. Create products and prices in the dashboard
+4. Set up the webhook for `checkout.session.completed`
 
-### 4. Configure o GitHub
+### 4. Configure GitHub
 
-**Opção A: GitHub App (Recomendado para produção)**
-1. Crie um [GitHub App](https://github.com/settings/apps) com permissões de organização
-2. Instale o app na organização onde quer criar repositórios
-3. Gere um token de instalação
+**Option A: GitHub App (Recommended for production)**
+1. Create a [GitHub App](https://github.com/settings/apps) with organization permissions
+2. Install the app in the organization where you want to create repositories
+3. Generate an installation token
 
-**Opção B: Personal Access Token (Para desenvolvimento)**
-1. Crie um [Personal Access Token](https://github.com/settings/tokens)
-2. Configure o repositório template como público ou privado
-3. Certifique-se de que o token tem permissões para:
-   - `repo` (repositórios privados)
-   - `workflow` (se usar GitHub Actions)
+**Option B: Personal Access Token (For development)**
+1. Create a [Personal Access Token](https://github.com/settings/tokens)
+2. Set the template repository as public or private
+3. Make sure the token has permissions for:
+   - `repo` (private repositories)
+   - `workflow` (if using GitHub Actions)
 
-**Opção C: Fallback Automático**
-- Se as opções acima não funcionarem, o sistema criará o repositório na sua conta e adicionará o cliente como colaborador
+**Option C: Automatic Fallback**
+- If the above options do not work, the system will create the repository in your account and add the client as a collaborator
 
-📖 **Veja a documentação completa:** [docs/GITHUB_SETUP.md](docs/GITHUB_SETUP.md)
+📖 **See the full documentation:** [docs/GITHUB_SETUP.md](docs/GITHUB_SETUP.md)
 
-### 5. Configure o Supabase
+### 5. Configure Supabase
 
-1. Crie um projeto no [Supabase](https://supabase.com)
-2. Configure a autenticação GitHub OAuth
-3. Obtenha as credenciais do projeto
+1. Create a project at [Supabase](https://supabase.com)
+2. Set up GitHub OAuth authentication
+3. Get your project credentials
 
-## 🏃‍♂️ Executando o Projeto
+## 🏃‍♂️ Running the Project
 
-### Desenvolvimento
+### Development
 
 ```bash
 npm run dev
 ```
 
-O servidor estará disponível em `http://localhost:5000`
+The server will be available at `http://localhost:5000`
 
-### 🧪 Endpoints de Teste
+### 🧪 Test Endpoints
 
-#### Testar Configuração GitHub
+#### Test GitHub Configuration
 ```bash
 curl -X POST http://localhost:5000/api/test-github \
   -H "Content-Type: application/json" \
-  -d '{"email": "cliente@exemplo.com"}'
+  -d '{"email": "client@example.com"}'
 ```
 
-#### Testar Criação de Repositório
+#### Test Repository Creation
 ```bash
 curl -X POST http://localhost:5000/api/test-create-repo \
   -H "Content-Type: application/json" \
-  -d '{"email": "cliente@exemplo.com", "planName": "PRO", "customerName": "João"}'
+  -d '{"email": "client@example.com", "planName": "PRO", "customerName": "John"}'
 ```
 
-#### Listar Clientes
+#### List Clients
 ```bash
 curl http://localhost:5000/api/customers
 ```
 
-### Produção
+### Production
 
 ```bash
 npm run build
 npm start
 ```
 
-## 📋 Fluxo de Funcionamento
+## 📋 How It Works
 
-### 1. Cliente Acessa a Landing Page
-- Visualiza os planos disponíveis
-- Clica em "CHOOSE PLAN"
+### 1. Client Visits the Landing Page
+- Sees available plans
+- Clicks on "CHOOSE PLAN"
 
-### 2. Autenticação
-- Se não logado, é redirecionado para login GitHub
-- Após login, volta para a página de preços
+### 2. Authentication
+- If not logged in, redirected to GitHub login
+- After login, returns to the pricing page
 
 ### 3. Checkout
-- Cliente seleciona o plano
-- É redirecionado para o Stripe Checkout
-- Completa o pagamento
+- Client selects a plan
+- Redirected to Stripe Checkout
+- Completes payment
 
-### 4. Página de Sucesso (Sem Webhook)
-- Cliente é redirecionado para `/success` com parâmetros
-- Página de sucesso chama `/api/create-repository`
-- Backend cria repositório no GitHub a partir do template
-- Adiciona cliente como colaborador
-- Cria issue de boas-vindas
+### 4. Success Page (Without Webhook)
+- Client is redirected to `/success` with parameters
+- Success page calls `/api/create-repository`
+- Backend creates the repository on GitHub from the template
+- Adds client as collaborator
+- Creates welcome issue
 
-### 5. Entrega
-- Cliente vê informações do repositório criado
-- Recebe link do repositório
-- Pode clonar e começar a desenvolver
+### 5. Delivery
+- Client sees information about the created repository
+- Receives repository link
+- Can clone and start developing
 
-### 🔄 Fluxo Alternativo com Webhook
-Para usar webhooks (recomendado para produção):
-1. Configure o webhook Stripe para `checkout.session.completed`
-2. O webhook processará automaticamente a criação do repositório
-3. Cliente será redirecionado para página de sucesso com dados já prontos
+### 🔄 Alternative Flow with Webhook
+To use webhooks (recommended for production):
+1. Set up the Stripe webhook for `checkout.session.completed`
+2. The webhook will automatically process repository creation
+3. Client will be redirected to the success page with data ready
 
-## 🔧 Estrutura do Projeto
+## 🔧 Project Structure
 
 ```
 ├── src/
-│   ├── components/          # Componentes React
-│   │   ├── Header.tsx      # Header com navegação
-│   │   ├── Hero.tsx        # Seção principal
-│   │   ├── Pricing.tsx     # Página de preços
-│   │   ├── Success.tsx     # Página de sucesso
+│   ├── components/          # React Components
+│   │   ├── Header.tsx      # Header with navigation
+│   │   ├── Hero.tsx        # Main section
+│   │   ├── Pricing.tsx     # Pricing page
+│   │   ├── Success.tsx     # Success page
 │   │   └── ...
 │   ├── lib/
-│   │   ├── supabase.ts     # Configuração Supabase
-│   │   └── stripe.ts       # Integração Stripe
-│   └── App.tsx             # Componente principal
+│   │   ├── supabase.ts     # Supabase configuration
+│   │   └── stripe.ts       # Stripe integration
+│   └── App.tsx             # Main component
 ├── server/
-│   ├── index.ts            # Servidor Express
-│   ├── routes.ts           # Rotas da API
-│   ├── github.ts           # Integração GitHub
-│   ├── customers.ts        # Gerenciamento de clientes
-│   └── vite.ts             # Configuração Vite
+│   ├── index.ts            # Express server
+│   ├── routes.ts           # API routes
+│   ├── github.ts           # GitHub integration
+│   ├── customers.ts        # Client management
+│   └── vite.ts             # Vite configuration
 └── package.json
 ```
 
-## 🎯 Personalização
+## 🎯 Customization
 
-### Modificar Planos
+### Edit Plans
 
-Edite o array `plans` em `src/components/Pricing.tsx`:
+Edit the `plans` array in `src/components/Pricing.tsx`:
 
 ```typescript
 const plans = [
@@ -202,71 +202,71 @@ const plans = [
     price: '$99.90',
     oldPrice: '$149.90',
     priceId: import.meta.env.VITE_STRIPE_STARTERID_HOM,
-    // ... outras propriedades
+    // ... other properties
   },
-  // ... outros planos
+  // ... other plans
 ];
 ```
 
-### Modificar Template GitHub
+### Change GitHub Template
 
-1. Crie um repositório template no GitHub
-2. Configure a variável `GITHUB_TEMPLATE_REPO`
-3. Personalize o issue de boas-vindas em `server/github.ts`
+1. Create a template repository on GitHub
+2. Set the `GITHUB_TEMPLATE_REPO` variable
+3. Customize the welcome issue in `server/github.ts`
 
-### Modificar Design
+### Change Design
 
-- Cores: Edite as classes Tailwind CSS
-- Componentes: Modifique os componentes em `src/components/`
-- Estilos globais: Edite `src/index.css`
+- Colors: Edit Tailwind CSS classes
+- Components: Modify components in `src/components/`
+- Global styles: Edit `src/index.css`
 
-## 🔒 Segurança
+## 🔒 Security
 
-- ✅ Chaves secretas do Stripe no backend
-- ✅ Validação de webhooks
-- ✅ Autenticação via GitHub OAuth
-- ✅ Tokens GitHub com permissões mínimas
-- ✅ Variáveis de ambiente seguras
+- ✅ Stripe secret keys in the backend
+- ✅ Webhook validation
+- ✅ Authentication via GitHub OAuth
+- ✅ GitHub tokens with minimal permissions
+- ✅ Secure environment variables
 
 ## 🚀 Deploy
 
 ### Vercel
 
-1. Conecte seu repositório ao Vercel
-2. Configure as variáveis de ambiente
-3. Deploy automático
+1. Connect your repository to Vercel
+2. Set environment variables
+3. Automatic deploy
 
 ### Netlify
 
-1. Conecte seu repositório ao Netlify
-2. Configure as variáveis de ambiente
-3. Deploy automático
+1. Connect your repository to Netlify
+2. Set environment variables
+3. Automatic deploy
 
-### Servidor Próprio
+### Own Server
 
-1. Build do projeto: `npm run build`
-2. Configure um servidor Node.js
-3. Configure proxy reverso (nginx)
-4. Configure SSL/HTTPS
+1. Build the project: `npm run build`
+2. Set up a Node.js server
+3. Set up reverse proxy (nginx)
+4. Set up SSL/HTTPS
 
-## 📞 Suporte
+## 📞 Support
 
-- 📧 Email: suporte@seudominio.com
-- 💬 Discord: [Link do servidor]
+- 📧 Email: support@yourdomain.com
+- 💬 Discord: [Server link]
 - 🐛 Issues: [GitHub Issues]
 
-## 📄 Licença
+## 📄 License
 
-MIT License - veja o arquivo [LICENSE](LICENSE) para detalhes.
+MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Contribuição
+## 🤝 Contribution
 
-1. Fork o projeto
-2. Crie uma branch para sua feature
-3. Commit suas mudanças
-4. Push para a branch
-5. Abra um Pull Request
+1. Fork the project
+2. Create a branch for your feature
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
 
 ---
 
-**Desenvolvido com ❤️ para acelerar seu projeto!** 
+**Developed with ❤️ to accelerate your project!** 
