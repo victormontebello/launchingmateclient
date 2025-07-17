@@ -199,7 +199,7 @@ Edit the `plans` array in `src/components/Pricing.tsx`:
 const plans = [
   {
     name: 'STARTER',
-    price: '$99.90',
+    price: '$49.90',
     oldPrice: '$149.90',
     priceId: import.meta.env.VITE_STRIPE_STARTERID_HOM,
     // ... other properties

@@ -29,7 +29,7 @@ function useCountdownToMidnight() {
 const plans = [
   {
     name: 'STARTER',
-    price: '$99.90',
+    price: '$49.90',
     oldPrice: '$149.90',
     discount: 50,
     priceId: import.meta.env.VITE_STRIPE_STARTERID,
@@ -50,7 +50,7 @@ const plans = [
   },
   {
     name: 'PRO',
-    price: '$149.90',
+    price: '$99.90',
     oldPrice: '$199.90',
     discount: 50,
     priceId: import.meta.env.VITE_STRIPE_PROID,
@@ -70,7 +70,7 @@ const plans = [
   },
   {
     name: 'ULTIMATE',
-    price: '$219.90',
+    price: '$149.90',
     oldPrice: '$269.90',
     discount: 50,
     priceId: import.meta.env.VITE_STRIPE_ULTIMATEID,
